@@ -1,0 +1,161 @@
+@import "../../styles/bootstrap.scss";
+
+.myBeautifulButton {
+    height: 300px;
+    .fa {
+        font-size: 60px;
+        margin: 50px auto;
+    }
+}
+
+.loading
+{
+  width: 180px;
+  height: 180px;
+  margin: 10px auto;
+  position: relative;
+}
+
+.outer-shadow, .inner-shadow
+{
+  z-index: 4;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.outer-shadow {
+  box-shadow: 0px 0px 1px 2px rgba(0,0,0,.2)
+}
+
+.inner-shadow
+{
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 160px;
+  margin-left: -80px;
+  margin-top: -80px;
+  border-radius: 100%;
+  background-color: #fff;
+  // box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.01);
+}
+.hold
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip: rect(0px, 180px, 180px, 90px);
+  border-radius: 100%;
+  background-color: $gray-lighter;
+}
+
+// Icon colors
+.incomplete span.fa {
+  color: $brand-info;
+}
+.started span.fa,
+.completed span.fa {
+  color: $brand-success;
+}
+.next span.fa {
+  color: $brand-warning;
+}
+.disabled-link span.fa {
+  color: $gray-lighter;
+}
+
+.enabled-link {
+  cursor: pointer;
+}
+.disabled-link {
+  cursor: not-allowed;
+}
+
+// Filling colors
+.started .fill,
+.completed .fill,
+{
+  background-color: $brand-success;
+}
+
+.next .fill
+{
+  background-color: $brand-warning;
+}
+
+.fill
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  clip: rect(0px, 90px, 180px, 0px);
+}
+
+.next .left .fill,
+.started .left .fill
+{
+  z-index: 1;
+  -webkit-animation: left 1s linear ;
+  -moz-animation: left 1s linear ;
+  animation: left 1s linear both;
+}
+
+.completed .left .fill,
+.completed .right .fill {
+  transform: rotate(180deg);
+}
+
+@keyframes left
+{
+    0%{-webkit-transform:rotate(0deg);}
+    100%{transform:rotate(180deg);}
+}
+
+@-webkit-keyframes left
+{
+    0%{-webkit-transform:rotate(0deg);}
+    100%{-webkit-transform:rotate(180deg);}
+}
+
+.right
+{
+  z-index: 3;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.next .right .fill,
+.started .right .fill
+{
+   z-index: 3;
+  -webkit-animation: right 1s linear ;
+  -moz-animation: right 1s linear ;
+  animation: right 1s linear both ;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+@keyframes right
+{
+    0%{-webkit-transform:rotate(0deg);}
+    100%{transform:rotate(180deg);}
+}
+
+@-webkit-keyframes right {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.inner-shadow img
+{
+    margin-left: 8px;margin-top: 7px;
+}
